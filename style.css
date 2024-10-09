@@ -1,0 +1,787 @@
+@font-face {
+    font-family: 'Sorts_Mill_Goudy';
+    src: url('fonts/Sorts_Mill_Goudy-Regular.ttf') format('truetype');
+}
+
+:root {
+    /* Colors */
+    --first-color: #a3bbda;
+    --sub-color: #2860a9;
+    --bg-color: #dde5f0;
+    --white-color: #ffffff;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Noto Sans JP', sans-serif;;
+    background-color: #ffffff;
+}
+* {
+    box-sizing: border-box;
+}
+ul {
+    list-style: none;
+    padding-right: 2rem;
+}
+a {
+    text-decoration: none;
+}
+
+
+/* Top Navigation Bar */
+.navigation {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 4;
+    background-color: #FFFFFF;
+}
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+}
+.menu li {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+}
+.logo {
+    height: 50px;
+    width: auto;
+}
+.logo img {
+    height: 100%;
+    margin-left: 50px;
+    object-fit: contain;
+    object-position: center;
+}
+
+
+/* Scroll Up Button */
+a#scroll-up {
+    position: fixed;
+    bottom: 40px;
+    width: 40px;
+    height: 40px;
+    right: 30px;
+    display: none; /* Initially hidden */
+    vertical-align: top;
+    color: #FFFFFF;
+    background-color: var(--first-color);
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    border-radius: 10px;
+    padding-top: 5px;
+    cursor: pointer;
+    text-align: center;
+    z-index: 100;
+}
+a#scroll-up:before {
+    content: '\f062';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 1000;
+    font-size: 30px;
+}
+a#scroll-up:hover {
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+
+/* First Page */
+#main {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+}
+#main::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-image: url(http://www.kiminona.com/images/top/main_vsl02.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: -1;
+}
+.main-text {
+    align-items: flex-start;
+}
+.left-img {
+    width: 40vw; /* Width is 40% of the viewport width */
+    height: auto; /* Maintain aspect ratio */
+    padding-top: 18%;
+}
+.right-img {
+    position: absolute;
+    right: 0%;
+    top: 10%;
+    width: 5vw;
+    height: auto; 
+}
+
+
+/* Introduction */
+#introduction {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 3;
+    position: relative;
+    text-align: center;
+    max-width: 100%;
+    padding: 1rem 0px;
+    background-image: url(http://www.kiminona.com/images/top/intro_vsl.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.intro-heading {
+    width: 100%;
+    font-family: 'Sorts_Mill_Goudy';
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+.intro-heading strong {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+}
+.intro-subtitle img {
+    width: 30%;
+    height: auto;
+}
+.intro-subtitle1 img {
+    width: 70%;
+    height: auto;
+}
+.intro-heading p {
+    color: #ffffff;
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+}
+.intro-subtitle2 p {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 0.1rem;
+}
+
+
+/* Movie */
+#movie {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 3;
+    position: relative;
+    text-align: center;
+    max-width: 100%;
+    padding: 4rem 0;
+    margin: 5px auto;
+    background-color: #ffffff;
+}
+.movie-heading {
+    color: var(--sub-color);
+    font-family: 'Sorts_Mill_Goudy';
+    font-size: 1.5rem;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+}
+.movie-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.movie-button a {
+    color: var(--sub-color);
+    margin: 20px;
+    padding: 10px 20px;
+    border: 1px solid var(--sub-color);
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.movie-button a:hover {
+    background-color: var(--sub-color);
+    color: #ffffff;
+    transition: all ease 0.5s;
+}
+.movie-box iframe {
+    width: 60vw;
+    height: 60vh;
+    border: none;
+}
+
+
+/* Story */
+#story {
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding-top: 2rem;
+    overflow: hidden;
+}
+.story-class {
+    width: 100vw;
+    display: flex;
+    position: relative;
+}
+.scroller {
+    flex: 2;
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    overflow: hidden;
+}
+.scroller-inner {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    flex-wrap: nowrap;
+    animation: scroll 20s linear infinite;
+}
+@keyframes scroll {
+    to {
+        transform: translateX(calc(-50%));
+    }
+}
+
+.story-text {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    background-image: linear-gradient(var(--sub-color), var(--first-color));
+    padding: 1rem;
+}
+.story-text strong {
+    font-family: 'Sorts_Mill_Goudy';
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+}
+.story-small {
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+}
+.story-big {
+    font-size: 2rem;
+    letter-spacing: 0.1rem;
+}
+.story-huge {
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    padding-bottom: 2rem;
+}
+
+
+/* Staff */
+#staff {
+    color: #ffffff;
+    font-family: 'Noto Sans JP', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    text-align: center;
+    max-width: 100%;
+    background: url('http://www.kiminona.com/images/top/staff_vsl.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: bottom;
+}
+.staff-heading {
+    font-family: 'Sorts_Mill_Goudy';
+    font-size: 1.5rem;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+    padding: 5rem;
+}
+.director-image {
+    padding-bottom: 1rem;
+}
+.director-title {
+    display: flex;
+    flex-direction: row;
+    letter-spacing: 0.2rem;
+}
+.director strong {
+    font-size: 1rem;
+    font-weight: bolder;
+    padding-right: 1rem;
+}
+.director-name p {
+    font-size: 2.5rem;
+}
+.director-text {
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    text-align: justify;
+    margin-left: 10rem;
+    margin-right: 10rem;
+    line-height: 2;
+}
+.director-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5rem;
+}
+.director-button a {
+    color: #ffffff;
+    margin: 20px;
+    padding: 10px 20px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.director-button a:hover {
+    background-color: #ffffff;
+    color: var(--sub-color);
+    transition: all ease 0.5s;
+    cursor: pointer;
+}
+.music-name p {
+    font-family: 'Sorts_Mill_Goudy';
+    font-size: 2.5rem;
+}
+
+
+/* Modal */
+.modal {
+    color: #ffffff;
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 999;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+}
+.modal-content {
+    padding: 3rem;
+    width: 100%;
+}
+/* The Close Button */
+.close {
+    color: #ffffff;
+    position: fixed;
+    top: 1rem;
+    right: 5rem;
+    font-size: 3rem;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    cursor: pointer;
+}
+.modal-heading {
+    font-size: 1.5rem;
+    text-align: center;
+    padding-top: 3rem;
+}
+.modal-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+    text-align: justify;
+    max-width: 100%;
+    padding: 1rem;
+    margin: 1rem;
+}
+.modal-row li {
+    flex: 1;
+    list-style-type: none;
+}
+.modal-row p {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.title,
+.winning-headline {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.year,
+.copyright,
+.winning-detail {
+    font-size: 0.8rem;
+}
+
+/* Interview Button */
+.animation-content {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    max-width: 80%;
+    max-height: 100vh;
+    padding-top: 4rem;
+    margin-top: 4rem;
+}
+.animation-heading {
+    padding-bottom: 5rem;
+}
+.animation-join {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: justify;
+}
+.animation-join-title {
+    flex: 1;
+    font-weight: bold;
+    line-height: 2;
+}
+.animation-join-text {
+    flex: 3.5;
+    font-weight: bold;
+    line-height: 2;
+    padding-bottom: 2rem;
+}
+.animation-join img {
+    flex: 3.5;
+    width: 30vw;
+    padding-left: 2rem;
+    padding-bottom: 2rem;
+}
+.music-content {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    max-width: 50%;
+    max-height: 100vh;
+}
+.music-text {
+    font-weight: bold;
+    line-height: 2;
+}
+
+
+/* Character */
+.character {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 3;
+    position: relative;
+    text-align: center;
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+}
+.character-heading {
+    color: var(--sub-color);
+    font-family: 'Sorts_Mill_Goudy';
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+    text-align: center;
+    padding-bottom: 2rem;
+}
+.main-character-box {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    max-width: 80%;
+}
+.taki-text, .taki-image, .mitsuha-text, .mitsuha-image {
+    align-self: flex-end;
+    padding-bottom: 3rem;
+}
+.taki {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+}
+.taki-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 1rem;
+}
+.taki-text strong {
+    flex: 1;
+    color: var(--sub-color);
+    font-family: 'KaiTi';
+    font-size: 4rem;
+    font-weight: 400;
+    padding-bottom: 2rem;
+}
+.taki-text p {
+    flex: 2;
+    color: var(--sub-color);
+    font-size: 0.8rem;
+    text-align: justify;
+    letter-spacing: 0.1rem;
+    line-height: 2;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.taki-pp {
+    flex: 1;
+}
+.taki-pp img {
+    padding-left: 0.5rem;
+}
+.taki-image {
+    flex: 1;
+}
+
+.mitsuha {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+}
+.mitsuha-image {
+    flex: 1;
+}
+.mitsuha-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 1rem;
+}
+.mitsuha-text strong {
+    flex: 1;
+    color: var(--sub-color);
+    font-family: 'KaiTi';
+    font-size: 4rem;
+    font-weight: 400;
+}
+.mitsuha-text p {
+    flex: 2;
+    color: var(--sub-color);
+    font-size: 0.8rem;
+    text-align: justify;
+    letter-spacing: 0.1rem;
+    line-height: 2;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.mitsuha-pp {
+    flex: 1;
+}
+.mitsuha-pp img {
+    padding-right: 0.5rem;
+}
+
+/* Main Cast */
+.main-cast-box {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    max-width: 80%;
+}
+.main-cast-1, .main-cast-2 {
+    flex: 1;
+}
+.main-cast-top-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+.main-cast-top-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+.main-cast-top-left img, .main-cast-top-right img {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.main-cast-bottom {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.main-cast-bottom p {
+    color: var(--sub-color);
+    font-size: 0.8rem;
+    text-align: justify;
+    letter-spacing: 0.1rem;
+    line-height: 2;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+/* Sub Character */
+.sub-character-box {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    max-width: 80%;
+}
+.sub-character-1, .sub-character-2 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.sub-character-top {
+    flex: 2;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding-left: 1rem;
+}
+.sub-character-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.sub-character-text p {
+    color: var(--sub-color);
+    font-size: 0.8rem;
+    text-align: justify;
+    letter-spacing: 0.1rem;
+    line-height: 2;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.sub-character-bottom {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+.sub-character-bottom img {
+    width: 18.5vw;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+/* Other Sub Characters */
+.sub-character-container {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    max-width: 80%;
+}
+.sub-character-container-inner {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+}
+.sub-character {
+    flex: 14;
+    display: flex;
+    flex-direction: row;
+    padding-right: 3rem;
+}
+.sub-character-image {
+    flex: 1;
+    padding-right: 1rem;
+}
+.sub-character-image img {
+    display: flex;
+    width: 100%;
+}
+.sub-character-about {
+    flex: 1;
+    align-items: justify;
+}
+.sub-character-name-1 {
+    width: 90%;
+}
+.sub-character-about img {
+    display: flex;
+    align-items: flex-start;
+}
+.sub-character-about p {
+    color: var(--sub-color);
+    font-size: 0.8rem;
+    text-align: justify;
+    line-height: 2;
+}
+/* Sub Cast */
+.sub-cast {
+    flex: 17;
+    display: flex;
+    flex-direction: row;
+}
+.sub-cast-image {
+    flex: 1;
+    padding-right: 1rem;
+}
+.sub-cast-about {
+
+}
+.sub-cast-about img {
+    display: flex;
+    align-items: flex-start;
+}
+.sub-cast-about p {
+    color: var(--sub-color);
+    font-size: 0.8rem;
+    text-align: justify;
+    line-height: 1.7;
+}
+
+
+/* Footer */
+.footer-name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3rem;
+    background-color: var(--sub-color);
+    color: #ffffff;
+}
+.footer-name-big {
+    font-size: 2rem;
+    font-weight: bold;
+    padding-bottom: 1rem;
+}
+.footer-name-small {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding-bottom: 1rem;
+}
+.footer-name p {
+    font-size: 0.8rem;
+    font-weight: bold;
+    width: 70vw;
+    text-align: center;
+}
