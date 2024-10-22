@@ -514,6 +514,7 @@ a#scroll-up:hover {
     letter-spacing: 0.3rem;
     text-transform: uppercase;
     text-align: center;
+    padding-top: 4rem;
     padding-bottom: 2rem;
 }
 .main-character-box {
