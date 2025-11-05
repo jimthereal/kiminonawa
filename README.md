@@ -1,1 +1,1 @@
-# kiminonawa.github.io
+jimthereal.github.io/kiminonawa
